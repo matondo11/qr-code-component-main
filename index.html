@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -22,10 +21,9 @@
 
     <title>Frontend Mentor | QR code component</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
-        font-size: 11px;
+        font-size: 0.6875rem; /* 11px */
         text-align: center;
       }
       .attribution a {
@@ -34,15 +32,28 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <img src="images/image-qr-code.png" alt="" />
-      <div>
-        <h2>Improve your front-end skills by building projects</h2>
+  
+    <main id="main">
+      <article class="container" aria-labelledby="title">
+        <img
+          src="images/image-qr-code.png"
+          alt="QR code linking to Frontend Mentor website"
+        />
+        <h1 id="title">Improve your front-end skills by building projects</h1>
         <p>
           Scan the QR code to visit Frontend Mentor and take your coding skills
           to the next level
         </p>
-      </div>
-    </div>
+      </article>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Matondo</a>.
+      </p>
+    </footer>
   </body>
 </html>
