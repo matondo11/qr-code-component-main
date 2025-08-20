@@ -56,7 +56,7 @@ img {
   object-fit: cover;
 }
 
-h1{
+#title{
   font-size: 1.25rem; /* 20px */
   color: var(--color-slate-900);
   width: 15rem;
@@ -65,8 +65,7 @@ h1{
 p {
   
   font-size: var(--font-size-paragraph);
-  color: var(--color-slate-500);
-  max-width: 15.5rem; /* ~246px */
+  max-width: 15.4rem; /* ~246px */
 
 }
 
@@ -79,7 +78,7 @@ p {
     max-width: 16rem; /* ~352px */
   }
 
-  h1 {
+  #title {
     font-size: 1.2rem; /* 24px */
   }
 
