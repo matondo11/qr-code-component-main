@@ -2,72 +2,88 @@
    Root Variables (Design System)
    ============================== */
 :root {
-  /* Color Palette */
-  --White: hsl(0, 0%, 100%);        /* Pure white */
-  --Slate300: hsl(212, 45%, 89%);   /* Light grayish blue background */
-  --Slate500: hsl(216, 15%, 48%);   /* Medium slate text color */
-  --Slate900: hsl(218, 44%, 22%);   /* Dark slate for strong text */
+  /* Colors */
+  --color-white: hsl(0, 0%, 100%);
+  --color-slate-300: hsl(212, 45%, 89%);
+  --color-slate-500: hsl(216, 15%, 48%);
+  --color-slate-900: hsl(218, 44%, 22%);
 
   /* Typography */
-  --paragraph: 15px;                /* Base paragraph font size */
-  --font-family: Outfit;            /* Global font family */
+  --font-size-paragraph: 0.938rem; /* 15px → rem */
+  --font-family: "Outfit", sans-serif;
+
+  /* Layout */
+  --radius-card: 1.25rem;   /* 20px */
+  --radius-img: .7rem;  /* 17px */
 }
 
-/* ====================================
-   Responsive Layout: Mobile → Desktop
-   Screen range: 375px to 1440px
-   ==================================== */
-@media screen and (min-width: 375px) and (max-width: 1440px) {
-  body {
-    /* Layout & Reset */
-    box-sizing: border-box;          /* Ensure padding/border don’t overflow */
-    background-color: var(--Slate300);
-    padding: 0;
-    margin: 0;
+/* ==============================
+   Base Styles (Mobile First)
+   ============================== */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--color-slate-300);
+  font-family: var(--font-family);
 
-    /* Centering Content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    /* Full Viewport */
-    width: 100vw;
-    height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+}
 
-    /* Typography Rules */
-    p {
-      font-size: var(--paragraph);   /* Consistent paragraph size */
-      width: 246px;                  /* Limit text width for readability */
-    }
+.container {
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: 1rem;
+  text-align: center;
 
-    h2 {
-      width: 300px;                  /* Align heading width with image */
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 15.3rem; 
+  max-height: fit-content;
+}
 
-    /* Image Styling */
-    img {
-      object-fit: cover;             /* Preserve aspect ratio */
-      width: 300px;                  /* Fixed responsive width */
-      border-radius: 17px;           /* Smooth rounded corners */
-    }
+img {
+  width: 100%;
+  max-width: 18.75rem; /* 300px em rem */
+  border-radius: var(--radius-img);
+  object-fit: cover;
+}
+
+h2 {
+  font-size: 1.25rem; /* 20px */
+  color: var(--color-slate-900);
+  width: 15rem;
+}
+
+p {
+  
+  font-size: var(--font-size-paragraph);
+  color: var(--color-slate-500);
+  max-width: 15.5rem; /* ~246px */
+
+}
+
+/* ==============================
+   Media Query → Larger Screens
+   ============================== */
+@media (min-width: 48rem) { /* 768px */
+  .container {
+    padding: 1rem;
+    max-width: 16rem; /* ~352px */
   }
 
-  /* ==============================
-     Container Card Component
-     ============================== */
-  .container {
-    text-align: center;              /* Center text alignment */
-    border-radius: 20px;             /* Rounded card shape */
-    padding: 10px;                   /* Inner spacing */
+  h2 {
+    font-size: 1.2rem; /* 24px */
+  }
 
-    /* Flex Layout */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-
-    /* Background */
-    background-color: var(--White);  /* White card on slate background */
+  p {
+    font-size: .9rem; /* 16px */
   }
 }
