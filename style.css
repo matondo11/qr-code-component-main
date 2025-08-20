@@ -1,0 +1,73 @@
+/* ==============================
+   Root Variables (Design System)
+   ============================== */
+:root {
+  /* Color Palette */
+  --White: hsl(0, 0%, 100%);        /* Pure white */
+  --Slate300: hsl(212, 45%, 89%);   /* Light grayish blue background */
+  --Slate500: hsl(216, 15%, 48%);   /* Medium slate text color */
+  --Slate900: hsl(218, 44%, 22%);   /* Dark slate for strong text */
+
+  /* Typography */
+  --paragraph: 15px;                /* Base paragraph font size */
+  --font-family: Outfit;            /* Global font family */
+}
+
+/* ====================================
+   Responsive Layout: Mobile → Desktop
+   Screen range: 375px to 1440px
+   ==================================== */
+@media screen and (min-width: 375px) and (max-width: 1440px) {
+  body {
+    /* Layout & Reset */
+    box-sizing: border-box;          /* Ensure padding/border don’t overflow */
+    background-color: var(--Slate300);
+    padding: 0;
+    margin: 0;
+
+    /* Centering Content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    /* Full Viewport */
+    width: 100vw;
+    height: 100vh;
+
+    /* Typography Rules */
+    p {
+      font-size: var(--paragraph);   /* Consistent paragraph size */
+      width: 246px;                  /* Limit text width for readability */
+    }
+
+    h2 {
+      width: 300px;                  /* Align heading width with image */
+    }
+
+    /* Image Styling */
+    img {
+      object-fit: cover;             /* Preserve aspect ratio */
+      width: 300px;                  /* Fixed responsive width */
+      border-radius: 17px;           /* Smooth rounded corners */
+    }
+  }
+
+  /* ==============================
+     Container Card Component
+     ============================== */
+  .container {
+    text-align: center;              /* Center text alignment */
+    border-radius: 20px;             /* Rounded card shape */
+    padding: 10px;                   /* Inner spacing */
+
+    /* Flex Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    /* Background */
+    background-color: var(--White);  /* White card on slate background */
+  }
+}
